@@ -1,0 +1,11 @@
+openai
+langchain-core
+langchain-openai
+langchain-text-splitters
+langchain-experimental
+langchain-chroma
+unstructured[all-docs]
+pydantic
+lxml
+langchainhub
+tiktoken
