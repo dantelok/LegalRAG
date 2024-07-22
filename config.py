@@ -1,5 +1,5 @@
 
 
 config = {
-    'OPENAI_API_KEY': '<api-key>'
+    'COHERE_API_KEY': '<api-key>'
 }

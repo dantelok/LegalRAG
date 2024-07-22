@@ -18,6 +18,10 @@ Your goal is to swiftly and accurately address these inquiries. Let's assist our
 <END>
 
 <</SYS>>
+Chat History:
+----------------
+{chat_history}
+----------------
 
 Context:
 ----------------
