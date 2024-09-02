@@ -1,32 +1,19 @@
-from src.chat import process_chat
-from src.prompt import prompt_template
-from fastapi import FastAPI
-from pydantic import BaseModel
+from src.chatbot import ChatBot
+from src.dataloader import DataLoader
 
 
-class UserInput(BaseModel):
-    question: str
+def main():
+    # Initialize the DataLoader and ChatBot
+    data_loader = DataLoader()
+    chat_bot = ChatBot(vector_store_path='./VectorStore/')
+
+    # Example usage: process a chat
+    answer, history = chat_bot.process_chat("這份文件的主要內容是什麼？")
+
+    # Print the answer and chat history
+    print("Answer:", answer)
+    print("Chat History:", history)
 
 
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.post("/chat")
-def chat(question: str):
-    answer, history = process_chat(question)
-
-    return {"answer": answer, **history}
-
-
-# if __name__ == '__main__':
-#     while True:
-#         question = input("：你好，請問有咩幫到你？\n")
-#         answer, history = process_chat(question)
-# 
-#         print(f"：{answer}\n")
-#         print(f"：{history}\n")
+if __name__ == "__main__":
+    main()

@@ -10,3 +10,4 @@ unstructured[all-docs]
 pydantic==2.7.4
 lxml==5.2.2
 tiktoken==0.7.0
+langchain~=0.2.5
